@@ -33,11 +33,7 @@ nix run github:4542elgh/libtexprintf-flake -- '\alpha^2 + \beta^2'
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    libtexprintf = {
-      url = "github:4542elgh/libtexprintf-flake";
-      inputs.nixpkgs.follows = "nixpkgs"; # Reuse your nixpkgs
-    };
+    libtexprintf.url = "github:4542elgh/libtexprintf-flake";
   };
 
   outputs = { self, nixpkgs, libtexprintf, ... }@inputs: { # make sure you pass libtexprintf here
