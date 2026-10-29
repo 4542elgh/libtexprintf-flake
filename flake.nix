@@ -12,7 +12,7 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, libtexprintf-src }:
-    flake-utils.lib.eachDefaultSystem (system:
+    flake-utils.lib.eachDefaultSystem (system: # flake-utils give you shorthand for all systems, so you dont define darwin/x86_64 etc separately
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
